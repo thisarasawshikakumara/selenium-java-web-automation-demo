@@ -50,7 +50,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     
-    steps:       
+    steps:  
+    - uses: actions/checkout@v3
+    
     - name: execute test
       run: mvn clean test -Pheadless-chrome,qa,smoke-test
 
